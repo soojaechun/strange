@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A short digital experience. Give in to gravity. Find another world.">
+  <title>STRANGE — an experiment</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Cpath d='M18 18h28v9H27v5h19v14H18v-9h19v-5H18z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='vendor/matter.min.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body data-scene="black">
+  <main id="experience" aria-label="An interactive digital artwork. Scroll, swipe up, or press Arrow Down to move forward.">
+    <section id="type-scene" class="scene" aria-label="Create something strange">
+      <h1 id="headline" aria-label="CREATE SOMETHING STRANGE."></h1>
+      <div id="letters" aria-hidden="true"></div>
+    </section>
+    <section id="object-scene" class="scene" aria-label="A slowly turning chrome sculpture. Scroll to enter." aria-hidden="true">
+      <canvas id="chrome" aria-label="Reflective twisted chrome sculpture"></canvas>
+      <div id="object-fallback" hidden></div>
+    </section>
+    <section id="pixel-scene" class="scene" aria-label="A living pixel world at sunset" aria-hidden="true">
+      <canvas id="pixels" aria-label="A warm pixel landscape with mountains, water, trees, drifting clouds and a little traveller"></canvas>
+      <button id="again" type="button" aria-label="Experience again">again <span aria-hidden="true">↺</span></button>
+    </section>
+    <p id="hint" aria-hidden="true">scroll <span>↓</span></p>
+    <div id="blackout" aria-hidden="true"></div>
+    <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+  <noscript><p class="no-js">This little world needs JavaScript.</p></noscript>
+</body>
+</html>
